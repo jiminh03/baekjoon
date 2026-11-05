@@ -1,16 +1,15 @@
 def solution(left, right):
-    answer = 0
+    count = 0
     
     for i in range(left, right+1):
-        cnt = 0
-        
+        sum = 0
         for j in range(1, i+1):
             if i % j == 0:
-                cnt += 1
-        
-        if cnt % 2 == 0:
-            answer += i
+                sum += 1
+                print(i, j, sum)
+        if sum % 2 == 0:
+            count += i
+            print(count)
         else:
-            answer -= i
-            
-    return answer
+            count -= i
+    return count
